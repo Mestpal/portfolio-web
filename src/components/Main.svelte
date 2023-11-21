@@ -1,5 +1,11 @@
 <script>
+	import Step from "./Step.svelte";
 
+    let steps = [
+        {name: 'project 1', icon: 'fa-solid fa-list-check'},
+        {name: 'project 2', icon: 'fa-solid fa-list-check'},
+        {name: 'project 3', icon: 'fa-solid fa-list-check'},
+    ]
 </script>
 
 <main class="flex flex-col flex-1 p-4">
@@ -36,5 +42,38 @@
                 class="object-cover z-[2] max-h-[70vh]"
             >
         </div>
+    </section>
+
+    <section id="projects" class="py-20 lg:py-32 flex flex-col gap-24">
+        <div class="flex flex-col gap-24 text-center">
+            <h6 class="text-lg sm:text-xl md:text-2xl">
+                Some of my recent projects
+            </h6>
+            <h3 class="font-semibolt text-3xl sm:text-4xl md:text-5xl">
+                Are you curious to <span class="poppins text-violet-400">see</span> my work?
+            </h3>
+            <a href="https://youtube.com/shorts/EZkiplhQiMs?feature=shared"
+            target="_blank" class="mx-auto px-4 py-2 rounded-md border border-solid border-white 
+            flex items-center gap-2 -mb-4 sm:-mb-0 -mt-10 hover:border-violet-700 duration-200"
+            >
+                <i class="fa-regular fa-circle-play"></i>
+                <p>Watch the video</p>
+            </a>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-10">
+                <Step step={steps[0]}>
+                    Project Description 1
+                </Step>
+                <Step step={steps[1]}>
+                    Project Description 2
+                </Step>
+                <Step step={steps[2]}>
+                    Project Description 3
+                </Step>                                
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+
     </section>
 </main>
